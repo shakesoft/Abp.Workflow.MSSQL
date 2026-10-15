@@ -1,4 +1,4 @@
-# Shakesoft.Workflow.MSSQL
+# Abp.Workflow.MSSQL
 
 WorkflowEngine.NET **14.0.0** 官方 MSSQL Provider 的源码版（来自 `github.com/optimajet/WorkflowEngine.NET` tag `14.0.0`），
 改造为可以**加入 ABP 工作单元事务**：工作流的读写和业务代码共用同一个连接、同一个事务，ABP 回滚时流程流转一起回滚。
