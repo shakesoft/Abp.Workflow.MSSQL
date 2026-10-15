@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- WorkflowEngine.NET 14.0.0 官方 MSSQL Provider 源码 (github.com/optimajet/WorkflowEngine.NET tag 14.0.0)，
+       改造为可加入 ABP 工作单元事务。改动处均标注 "abp-tx:"。 -->
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>OptimaJet.Workflow.MSSQL</RootNamespace>
+    <!-- 与 NuGet 的 OptimaJet.Workflow.MSSQL.dll 区分，Web.Host 发布时会删除同名 dll -->
+    <AssemblyName>Shakesoft.Workflow.MSSQL</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\InitialWorkflowEngineSchema.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="$(AbpVersion)" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+    <PackageReference Include="WorkflowEngine.NETCore-Core" Version="$(WorkflowEngineVersion)" />
+    <PackageReference Include="WorkflowEngine.NETCore-Migrator" Version="$(WorkflowEngineVersion)" />
+  </ItemGroup>
+</Project>
